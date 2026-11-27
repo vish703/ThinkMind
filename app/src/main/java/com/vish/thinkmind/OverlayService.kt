@@ -87,7 +87,7 @@ class OverlayService : Service() {
             events.getNextEvent(e)
             @Suppress("DEPRECATION")
             if (e.eventType == UsageEvents.Event.MOVE_TO_FOREGROUND &&
-                e.packageName != packageName && e.packageName != currentPkg) {
+                 e.packageName != currentPkg && e.packageName != "com.android.systemui") {
                 if (!ignored(currentPkg)) { prevPkg = currentPkg; prevLeftAt = e.timeStamp }
                 currentPkg = e.packageName
             }
